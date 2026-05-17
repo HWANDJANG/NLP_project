@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import ast, pathlib; [ast.parse\\(p.read_text\\(encoding='utf-8'\\)\\) for p in pathlib.Path\\('src'\\).rglob\\('*.py'\\)]; print\\('all parse ok'\\)\")"
+    ]
+  }
+}
