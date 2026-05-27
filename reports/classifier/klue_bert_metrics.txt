@@ -1,0 +1,20 @@
+KLUE-BERT (klue/bert-base) fine-tuning
+epochs=4 batch=16 lr=2e-05 max_len=96 class-weighted CE
+
+Dataset: 2393 comments | split 60/20/20 | s=82 i=2038 c=273
+
+Held-out test (20%) classification report:
+                 precision    recall  f1-score   support
+
+ s · Supportive      0.444     0.500     0.471        16
+i · Informative      0.908     0.873     0.890       408
+   c · Critical      0.391     0.491     0.435        55
+
+       accuracy                          0.816       479
+      macro avg      0.581     0.621     0.599       479
+   weighted avg      0.833     0.816     0.824       479
+
+Confusion matrix (rows=true, cols=pred, order=s/i/c):
+[[  8   8   0]
+ [ 10 356  42]
+ [  0  28  27]]

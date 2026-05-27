@@ -1,0 +1,22 @@
+TF-IDF (char_wb, 2-4) + Logistic Regression (class_weight=balanced)
+
+Dataset: 2393 comments (s=82, i=2038, c=273)
+
+5-fold CV macro-F1   : 0.568 ± 0.055
+5-fold CV weighted-F1: 0.835 ± 0.019
+
+Held-out test (20%) classification report:
+                 precision    recall  f1-score   support
+
+ s · Supportive      0.455     0.312     0.370        16
+i · Informative      0.882     0.936     0.908       408
+   c · Critical      0.371     0.236     0.289        55
+
+       accuracy                          0.835       479
+      macro avg      0.569     0.495     0.523       479
+   weighted avg      0.809     0.835     0.819       479
+
+Confusion matrix (rows=true, cols=pred, order=s/i/c):
+[[  5   9   2]
+ [  6 382  20]
+ [  0  42  13]]

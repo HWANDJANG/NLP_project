@@ -1,0 +1,21 @@
+KLUE-BERT (klue/bert-base) fine-tuning — augmented (train += Gemini paraphrases)
+epochs=4 batch=16 lr=2e-05 max_len=96 class-weighted CE | split.json (60/20/20)
+
+train=1905 (s=197 i=1222 c=486) | val=479 | test=479
+** val/test are ORIGINAL real comments only **
+
+Held-out test classification report:
+                 precision    recall  f1-score   support
+
+ s · Supportive      0.400     0.500     0.444        16
+i · Informative      0.890     0.875     0.883       408
+   c · Critical      0.328     0.345     0.336        55
+
+       accuracy                          0.802       479
+      macro avg      0.539     0.573     0.554       479
+   weighted avg      0.809     0.802     0.805       479
+
+Confusion matrix (rows=true, cols=pred, order=s/i/c):
+[[  8   8   0]
+ [ 12 357  39]
+ [  0  36  19]]

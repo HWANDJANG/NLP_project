@@ -1,0 +1,49 @@
+Loaded 2393 comments. 3-class counts: s=82, i=2038, c=273
+
+================================================================
+Task A) Critical vs Non-Critical (c vs i+s)
+================================================================
+class counts: {'critical': 273, 'non_critical': 2120}
+majority baseline accuracy: 0.886
+5-fold CV macro-F1            : 0.670 ± 0.012
+5-fold CV positive-class F1   : 0.407 ± 0.025   (positive = 'critical')
+
+Held-out test (20%) classification report:
+              precision    recall  f1-score   support
+
+    critical      0.400     0.218     0.282        55
+non_critical      0.904     0.958     0.930       424
+
+    accuracy                          0.873       479
+   macro avg      0.652     0.588     0.606       479
+weighted avg      0.846     0.873     0.856       479
+Confusion matrix (rows=true, cols=pred, order=['critical', 'non_critical']):
+[[ 12  43]
+ [ 18 406]]
+
+================================================================
+Task B) Subjective vs Informative (s+c vs i)
+================================================================
+class counts: {'informative': 2038, 'subjective': 355}
+majority baseline accuracy: 0.852
+5-fold CV macro-F1            : 0.667 ± 0.013
+5-fold CV positive-class F1   : 0.424 ± 0.022   (positive = 'subjective')
+
+Held-out test (20%) classification report:
+              precision    recall  f1-score   support
+
+ informative      0.898     0.924     0.911       408
+  subjective      0.475     0.394     0.431        71
+
+    accuracy                          0.846       479
+   macro avg      0.686     0.659     0.671       479
+weighted avg      0.835     0.846     0.840       479
+Confusion matrix (rows=true, cols=pred, order=['subjective', 'informative']):
+[[ 28  43]
+ [ 31 377]]
+
+================================================================
+Summary  (3-class baseline reference: macro-F1 = 0.568, accuracy = 0.835)
+================================================================
+  A. Critical vs Non-Critical : macro-F1=0.670   c-F1=0.407
+  B. Subjective vs Informative: macro-F1=0.667   (s∪c)-F1=0.424

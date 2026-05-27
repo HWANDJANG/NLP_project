@@ -7,3 +7,13 @@ data/raw/*.jsonl
 data/raw/*.json
 .vscode/
 .idea/
+
+# Trained model artifacts — large (100MB+) and regenerable from scripts.
+# Kept on local disk, never committed (GitHub rejects >100MB files).
+reports/classifier/klue_bert/
+reports/classifier/klue_bert_aug/
+reports/classifier/**/_trainer_state/
+*.safetensors
+*.pt
+*.bin
+*.joblib
